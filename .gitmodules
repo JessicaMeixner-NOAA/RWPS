@@ -1,4 +1,4 @@
 [submodule "sorc/WW3"]
-	path = sorc/WW3
+	path = sorc/ww3.fd
 	url = https://github.com/NOAA-EMC/WW3.git
 	branch = prod/GLWUv2
