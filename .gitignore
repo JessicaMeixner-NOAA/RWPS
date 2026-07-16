@@ -4,7 +4,6 @@ fix/grint_weights.grlc_2p5km
 fix/grint_weights.grlr
 fix/grint_weights.grlr_500m
 exec/
-*.out
 fix/wave_rwps_rwps.moddef.v1.0.0
 fix/wave_rwps_grlc_2p5km.moddef
 fix/wave_rwps_grlc_2p5km_sr.moddef
@@ -19,4 +18,8 @@ dev/lsf_scripts/PDY_rwps
 dev/lsf_scripts/PDY.TODAY
 dev/lsf_scripts/rwps.v1.0.0.HOOK
 dev/lsf_scripts/ncepdate
-sorc/rwps.compile.log
+
+sorc/logs
+
+versions/run.ver
+versions/build.ver
