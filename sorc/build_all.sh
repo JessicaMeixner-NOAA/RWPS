@@ -29,6 +29,7 @@ done
 # shellcheck disable=SC2155
 readonly HOMErwps=$(cd "$(dirname "$(readlink -f -n "${BASH_SOURCE[0]}")")/.." && pwd -P)
 
+echo HOMErwps=${HOMErwps}
 #------------------------------------
 # GET MACHINE
 #------------------------------------
@@ -44,7 +45,7 @@ fi
 # SOURCE BUILD VERSION FILES
 #------------------------------------
 cd "${HOMErwps}/versions" || exit 1
-ln -sf "${HOMErwps}"/versions/build."${MACHINE_ID}".ver "${HOMEglobal}"/versions/build.ver
+ln -sf "${HOMErwps}"/versions/build."${MACHINE_ID}".ver "${HOMErwps}"/versions/build.ver
 source "${HOMErwps}"/versions/build.ver
 
 cd "${HOMErwps}/sorc" || exit 1
@@ -76,27 +77,29 @@ err=0
 #------------------------------------
 # build ww3
 #------------------------------------
-$Build_ww3 && {
 echo " .... Building ww3 .... "
+set +e 
 ./build_ww3.sh ${debug_opt} > $logs_dir/build_ww3.log 2>&1
+#./testscript.sh ${debug_opt} > $logs_dir/build_ww3.log 2>&1
 rc=$?
+set -e 
 if [[ $rc -ne 0 ]] ; then
     echo "Fatal error in building ww3."
     echo "The log file is in $logs_dir/build_ww3.log"
 fi
-((err+=$rc))
-}
+err=$((err+rc))
 
 #------------------------------------
 # Exception Handling
 #------------------------------------
-if ((errs != 0)); then
+if ((err != 0)); then
     cat << EOF
 BUILD ERROR: One or more components failed to build
   Check the associated build log(s) for details.
 EOF
-    ${ERRSCRIPT} || exit "${errs}"
+    ${ERRSCRIPT} || exit "${err}"
 fi
+echo "where's waldo 3"
 
 echo
 echo " .... Build system finished .... "

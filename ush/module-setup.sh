@@ -13,7 +13,7 @@
 
 set -u
 
-source "${HOMEglobal}/ush/detect_machine.sh"
+source "${HOMErwps}/ush/detect_machine.sh"
 
 if [[ ${MACHINE_ID} = hera* ]]; then
     # We are on NOAA Hera
