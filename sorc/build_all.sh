@@ -98,8 +98,8 @@ set +e
 rc=$?
 set -e
 if [[ $rc -ne 0 ]] ; then
-    echo "Fatal error in building ww3."
-    echo "The log file is in $logs_dir/build_ww3.log"
+    echo "Fatal error in building inpaint_nic."
+    echo "The log file is in $logs_dir/build_inpaint_nic.log"
 fi
 err=$((err+rc))
 
