@@ -80,7 +80,6 @@ err=0
 echo " .... Building ww3 .... "
 set +e 
 ./build_ww3.sh ${debug_opt} > $logs_dir/build_ww3.log 2>&1
-#./testscript.sh ${debug_opt} > $logs_dir/build_ww3.log 2>&1
 rc=$?
 set -e 
 if [[ $rc -ne 0 ]] ; then
@@ -88,6 +87,22 @@ if [[ $rc -ne 0 ]] ; then
     echo "The log file is in $logs_dir/build_ww3.log"
 fi
 err=$((err+rc))
+
+#------------------------------------
+# build inpaint_nic 
+#------------------------------------
+echo " .... Building inpaint_nic .... "
+cd "${HOMErwps}/sorc" || exit 1
+set +e
+./build_inpaint_nic.sh ${debug_opt} > $logs_dir/build_inpaint_nic.log 2>&1
+rc=$?
+set -e
+if [[ $rc -ne 0 ]] ; then
+    echo "Fatal error in building ww3."
+    echo "The log file is in $logs_dir/build_ww3.log"
+fi
+err=$((err+rc))
+
 
 #------------------------------------
 # Exception Handling
