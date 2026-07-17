@@ -1,0 +1,4 @@
+#!/bin/bash
+# Fix file subfolder versions
+
+export grid_ver=20260716
