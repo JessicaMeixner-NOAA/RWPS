@@ -114,7 +114,6 @@ BUILD ERROR: One or more components failed to build
 EOF
     ${ERRSCRIPT} || exit "${err}"
 fi
-echo "where's waldo 3"
 
 echo
 echo " .... Build system finished .... "
