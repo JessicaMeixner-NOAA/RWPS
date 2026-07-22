@@ -16,6 +16,9 @@ Go to your /lfs/h2/emc/couple/noscrub/$USER directory
   ***VERY IMPORTANT*** DELETE any wave_rwps*.moddef.* files in the fix directory,
     these should be generated when the system is run for the first time.
 
+
+#NOTE: The instructions below are not garunteed to work, we are in the process 
+#of updating instructions and workflow
  TESTING INSTRUCTIONS WITH RETROSPECTIVE RUNS
 
  cd dev/lsf_scripts      
