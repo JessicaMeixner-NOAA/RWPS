@@ -129,8 +129,8 @@ if [[ -n "${FIX_DIR}" ]]; then
 fi
 cd "${HOMErwps}/fix" || exit 1
 
-for dir in oc_10km_200km \    
-    oc_20km_300km \  
+for dir in oc_10km_200km \
+    oc_20km_300km \
     oc_5km_100km \
     oc_1500m_30km \
     oc_500m_10km; do 
