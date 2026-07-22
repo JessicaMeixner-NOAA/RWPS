@@ -129,8 +129,6 @@ if [[ -n "${FIX_DIR}" ]]; then
 fi
 cd "${HOMErwps}/fix" || exit 1
 
-##safe_link_or_copy "${FIX_DIR}/${grid_ver}" grid
-
 for dir in oc_10km_200km \    
     oc_20km_300km \  
     oc_5km_100km \
