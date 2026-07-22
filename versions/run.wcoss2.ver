@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 export rwps_ver=v1.0.0
 export PrgEnv_intel_ver=8.3.3
 export craype_ver=2.7.17

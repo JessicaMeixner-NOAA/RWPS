@@ -1,16 +1,18 @@
 IMPLEMENTATION INSTRUCTIONS ON WCOSS2
 Go to your /lfs/h2/emc/couple/noscrub/$USER directory
- mkdir rwps
- cd rwps
- git clone  https://github.com/NOAA-EMC/rwps.git rwps.v1.0.0
- cd rwps.v1.0.0
- git submodule update --init --recursive
+ >> mkdir rwps
+ >> cd rwps
+ >> git clone  https://github.com/NOAA-EMC/rwps.git rwps.v1.0.0
+ >> cd rwps.v1.0.0
+ >> git submodule update --init --recursive
 
- cd sorc
- >> ./get_externals.sh
- >>./make.all.sh >& rwps.compile.log
+ >> cd sorc
+ >> ./build_all.sh >& rwps.compile.log
+ >> ./link_workflow.sh 
  An exec/ folder should be created in the main directory after this step
 
+
+#TODO: We shouldn't be copying anything to fix folder, so need to figure out what this is about
   ***VERY IMPORTANT*** DELETE any wave_rwps*.moddef.* files in the fix directory,
     these should be generated when the system is run for the first time.
 
