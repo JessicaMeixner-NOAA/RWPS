@@ -112,9 +112,8 @@ safe_link_or_copy "${HOMErwps}/versions/run.${machine}.ver" "${HOMErwps}/version
 #------------------------------
 case "${machine}" in
     "wcoss2") FIX_DIR="/lfs/h2/emc/couple/noscrub/keston.smith/RWPS/fix" ;;
-    "ursa" | "ursa") FIX_DIR="/scratch3/NCEPDEV/climate/Keston.Smith/RWPS/fix" ;;
-    "orion") FIX_DIR="/work2/noaa/marine/keston/RWPS/fix" ;;
-    "hercules") FIX_DIR="/work2/noaa/marine/keston/RWPS/fix" ;;
+    "ursa" ) FIX_DIR="/scratch3/NCEPDEV/climate/Jessica.Meixner/RWPS/fix" ;;
+    "orion" | "hercules") FIX_DIR="/work2/noaa/marine/keston/RWPS/fix" ;;
     *)
         echo "FATAL: Unknown target machine ${machine}, couldn't set FIX_DIR"
         exit 1
@@ -130,5 +129,14 @@ if [[ -n "${FIX_DIR}" ]]; then
 fi
 cd "${HOMErwps}/fix" || exit 1
 
-safe_link_or_copy "${FIX_DIR}/${grid_ver}" grid
+##safe_link_or_copy "${FIX_DIR}/${grid_ver}" grid
+
+for dir in oc_10km_200km \    
+    oc_20km_300km \  
+    oc_5km_100km \
+    oc_1500m_30km \
+    oc_500m_10km; do 
+    fix_ver="${dir}_ver"
+    safe_link_or_copy "${FIX_DIR}/${dir}/${!fix_ver}" "${dir}"
+done
 

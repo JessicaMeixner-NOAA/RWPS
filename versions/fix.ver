@@ -1,4 +1,9 @@
 #!/bin/bash
 # Fix file subfolder versions
 
-export grid_ver=20260716
+export oc_10km_200km_ver=20260722
+export oc_20km_300km_ver=20260722
+export oc_5km_100km_ver=20260722
+export oc_1500m_30km_ver=20260722
+export oc_500m_10km_ver=20260722
+
