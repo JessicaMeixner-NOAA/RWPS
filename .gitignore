@@ -18,7 +18,11 @@ fix/wave_rwps_grlc_2p5km_sr.moddef
 fix/wave_rwps_grlr.moddef
 fix/wave_rwps_glwu.moddef
 fix/wave_rwps_grlr_500m.moddef
-fix/grid
+fix/oc_10km_200km
+fix/oc_20km_300km
+fix/oc_5km_100km
+fix/oc_1500m_30km
+fix/oc_500m_10km
 #log files
 dev/lsf_scripts/PDY_rwps
 dev/lsf_scripts/PDY.TODAY
