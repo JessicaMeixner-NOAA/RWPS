@@ -111,7 +111,7 @@ safe_link_or_copy "${HOMErwps}/versions/run.${machine}.ver" "${HOMErwps}/version
 #--model fix fields
 #------------------------------
 case "${machine}" in
-    "wcoss2") FIX_DIR="/lfs/h2/emc/couple/noscrub/keston.smith/RWPS/fix" ;;
+    "wcoss2") FIX_DIR="/lfs/h2/emc/couple/noscrub/omd.wave/fix/rwps" ;;
     "ursa" ) FIX_DIR="/scratch3/NCEPDEV/climate/Jessica.Meixner/RWPS/fix" ;;
     "orion" | "hercules") FIX_DIR="/work2/noaa/marine/keston/RWPS/fix" ;;
     *)
