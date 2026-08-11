@@ -112,7 +112,7 @@ safe_link_or_copy "${HOMErwps}/versions/run.${machine}.ver" "${HOMErwps}/version
 #------------------------------
 case "${machine}" in
     "wcoss2") FIX_DIR="/lfs/h2/emc/couple/noscrub/omd.wave/fix/rwps" ;;
-    "ursa" ) FIX_DIR="/scratch3/NCEPDEV/climate/Jessica.Meixner/RWPS/fix" ;;
+    "ursa" ) FIX_DIR="/scratch3/NCEPDEV/marine/role.wave/fix/rwps" ;;
     "orion" | "hercules") FIX_DIR="/work2/noaa/marine/role-wave/fix/rwps" ;;
     *)
         echo "FATAL: Unknown target machine ${machine}, couldn't set FIX_DIR"
